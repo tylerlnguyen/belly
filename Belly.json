@@ -1,0 +1,3644 @@
+{
+	"info": {
+		"_postman_id": "522f337d-47b0-4a6f-bd5f-1ffa896f234f",
+		"name": "Belly",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login with QR Code",
+					"item": [
+						{
+							"name": "Login with QR Code",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "970bf8ed-8374-44de-8626-2d1592e210ad",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/oauth/login_with_qr_code?access_token={{access_token}}&qr_code={{qr}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"login_with_qr_code"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										},
+										{
+											"key": "qr_code",
+											"value": "{{qr}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Missing a required parameter: missing_param",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e6cf6a30-26b8-47dc-86e1-ea4edde81040",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Misssing a required parameter: missing_param\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Missing a required parameter, please check the documentation\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_param\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "c32549-311969834a10b1b24722098083dcc549cd46272a4052119cd53bb313f9c4873b",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "access_token",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "query",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/oauth/login_with_qr_code?qr_code=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"login_with_qr_code"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "qr_code",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "QR Code not accepted: access_denied",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "45c430bd-87fe-4add-935c-569fa5ba5a6b",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"QR Code not accepted: access_denied\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"qr code not accepted\");",
+											"    pm.expect(pm.response.text()).to.include(\"access_denied\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "c32549-311969834a10b1b24722098083dcc549cd46272a4052119cd53bb313f9c4873b",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "access_token",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "query",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/oauth/login_with_qr_code?qr_code=inc0rrectqrc0de",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"login_with_qr_code"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "qr_code",
+											"value": "inc0rrectqrc0de"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Login with Card ID",
+					"item": [
+						{
+							"name": "Login with Card ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2ad64847-b880-46ee-9d1a-8804b0b1410b",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/oauth/login?access_token={{access_token}}&card_id={{id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										},
+										{
+											"key": "card_id",
+											"value": "{{id}}"
+										}
+									]
+								},
+								"description": "Sign in a user and retrieve the access_token which allows accessing protected resources on behalf of this user. Either an email and password, or a card_id or a user_id is required. If the email and password is used, you can set auto_register to true and we will create this account automatcally if it does not already exist.\nOn success returns the user model with an access_token, or card model if logging in with a card id. If the card has not yet been verified you will not recieve an access token or user data with the card object.\n On failure returns a message describing the reason for the failure\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Either an email and password or a card_id is required: missing_param",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f743deda-1c1c-42ad-a147-c741ca876d93",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Either an email and password or a card_id is required: missing_param\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Either an email and password or a card_id is required\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_param\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/oauth/login?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										},
+										{
+											"key": "card_id",
+											"value": "{{id}}",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Sign in a user and retrieve the access_token which allows accessing protected resources on behalf of this user. Either an email and password, or a card_id or a user_id is required. If the email and password is used, you can set auto_register to true and we will create this account automatcally if it does not already exist.\nOn success returns the user model with an access_token, or card model if logging in with a card id. If the card has not yet been verified you will not recieve an access token or user data with the card object.\n On failure returns a message describing the reason for the failure\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Authentication Failed: login_failed",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e28fa98b-c99f-4d75-81d4-b04315780098",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Autentication Failed: login_failed\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Authentication Failed\");",
+											"    pm.expect(pm.response.text()).to.include(\"login_failed\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/oauth/login?access_token={{access_token}}&card_id={{id}}8(%26%26%26%26",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										},
+										{
+											"key": "card_id",
+											"value": "{{id}}8(&&&&"
+										}
+									]
+								},
+								"description": "Sign in a user and retrieve the access_token which allows accessing protected resources on behalf of this user. Either an email and password, or a card_id or a user_id is required. If the email and password is used, you can set auto_register to true and we will create this account automatcally if it does not already exist.\nOn success returns the user model with an access_token, or card model if logging in with a card id. If the card has not yet been verified you will not recieve an access token or user data with the card object.\n On failure returns a message describing the reason for the failure\n"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Login w/ Username & Password",
+					"item": [
+						{
+							"name": "Login w/ username & password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e2089e95-e220-4705-9ce1-7c5221e8f495",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/oauth/login?access_token={{access_token}}&card_id={{id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										},
+										{
+											"key": "email",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "card_id",
+											"value": "{{id}}"
+										}
+									]
+								},
+								"description": "Uncheck card_id param, check email & password parameters & enter information. "
+							},
+							"response": []
+						},
+						{
+							"name": "Either an email and password or a card_id is required: missing_param",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6400fcdd-10bb-4975-8293-a0a3ce2f4590",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Either an email and password or a card_id is required: missing_param\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Either an email and password or a card_id is required\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_param\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/oauth/login?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										},
+										{
+											"key": "email",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "card_id",
+											"value": "{{id}}",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Uncheck card_id param, check email & password parameters & enter information. "
+							},
+							"response": []
+						},
+						{
+							"name": "Authentication Failed: login_failed",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "25ea2755-95a3-4fda-b048-6001d77b46e1",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Autentication Failed: login_failed\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Authentication Failed\");",
+											"    pm.expect(pm.response.text()).to.include(\"login_failed\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/oauth/login?access_token={{access_token}}&card_id=*%26*(%26(%26(",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										},
+										{
+											"key": "email",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "card_id",
+											"value": "*&*(&(&("
+										}
+									]
+								},
+								"description": "Uncheck card_id param, check email & password parameters & enter information. "
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "13570e98-fda9-4aa8-8a3f-09fee2fb3067",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f85a5c3e-34e3-425a-ac54-4d375f42f3e5",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Info on Current User",
+					"item": [
+						{
+							"name": "Info on current user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "95541842-0ffc-4af6-aca4-60def6528326",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/oauth/me?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"me"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									]
+								},
+								"description": "Information on the current authenticated user or client or both\nOn success returns details on the currently authenticated client, user, and business On failure returns a message describing the reason for the failure"
+							},
+							"response": []
+						},
+						{
+							"name": "Missing access token parameter: missing_access_token_param",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "120ab9bc-b60d-4305-b039-8968c78fe541",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"You must pass an access_token to use this resource: missing_access_token_param\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"You must pass an access_token to use this resource\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_access_token_param\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/oauth/me?access_token=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"me"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": ""
+										}
+									]
+								},
+								"description": "Information on the current authenticated user or client or both\nOn success returns details on the currently authenticated client, user, and business On failure returns a message describing the reason for the failure"
+							},
+							"response": []
+						},
+						{
+							"name": "Provided access_token is invalid: invalid_access_token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "95cc2176-93e4-469e-b7b9-e0a3b919e841",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"The provided access_token is invalid\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"The provided access_token is invalid\");",
+											"    pm.expect(pm.response.text()).to.include(\"invalid_access_token\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/oauth/me?access_token={{access_token}}8***",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"oauth",
+										"me"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}8***"
+										}
+									]
+								},
+								"description": "Information on the current authenticated user or client or both\nOn success returns details on the currently authenticated client, user, and business On failure returns a message describing the reason for the failure"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Client Features",
+			"item": [
+				{
+					"name": "Returns client info",
+					"item": [
+						{
+							"name": "Returns client info",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0e23161e-0a1b-4789-978a-163f8b79fbb6",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/clients/:client_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"clients",
+										":client_id"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "client_id",
+											"value": "{{client_id}}"
+										}
+									]
+								},
+								"description": "Seems authentication is not needed.."
+							},
+							"response": []
+						},
+						{
+							"name": "404 Not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "836e645a-148b-4e1c-bde4-e6e9f1f5e668",
+										"exec": [
+											"",
+											"pm.test(\"404 Not Found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Not Found\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/clients/:client_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"clients",
+										":client_id"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "client_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "Seems authentication is not needed.."
+							},
+							"response": []
+						},
+						{
+							"name": "Record not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "51ca57ed-d790-4876-8567-38a0c5856fc9",
+										"exec": [
+											"pm.test(\"Record not found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.include(\"record not found\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/clients/:client_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"clients",
+										":client_id"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "client_id",
+											"value": "*&*&*(&("
+										}
+									]
+								},
+								"description": "Seems authentication is not needed.."
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Returns client features",
+					"item": [
+						{
+							"name": "Returns client features",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e60ac571-b06d-446a-8dba-a266365633ec",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/clients/:client_id/features?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"clients",
+										":client_id",
+										"features"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "client_id",
+											"value": "{{client_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Record not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2a921343-8889-49eb-9084-125ae61f09e8",
+										"exec": [
+											"pm.test(\"Record not found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.include(\"record not found\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/clients/:client_id/features?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"clients",
+										":client_id",
+										"features"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "client_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get device info for client",
+					"item": [
+						{
+							"name": "Get device info for client",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "affbe43e-4fbe-4ffa-891f-627a0101d7df",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/clients/{{client_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"clients",
+										"{{client_id}}"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{client_id}}",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Authentication not required...\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Record not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6829be68-a528-42b2-ace5-c827f40f42fe",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/clients/{{client_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"clients",
+										"{{client_id}}"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{client_id}}",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Authentication not required...\n"
+							},
+							"response": []
+						},
+						{
+							"name": "404 not Found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "262e14ee-5b36-4ef5-aab3-7171458ede36",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/clients/{{client_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"clients",
+										"{{client_id}}"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{client_id}}",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Authentication not required...\n"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get user check-ins",
+					"item": [
+						{
+							"name": "Get user check-ins",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e202a99f-e9d2-4970-a2f0-d635a0a7bce2",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/users/id/checkins?id={{id}}&access_token={{tyler_access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"id",
+										"checkins"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{id}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{tyler_access_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method requires an access_token for a user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d2ffc1b9-8580-4080-b143-2cc637b43862",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"This method requires an access_token for a user: missing_access_token_param\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"This method requires an access_token for a user\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_access_token_param\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/users/id/checkins?access_token=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"id",
+										"checkins"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "access_token",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Provided access_token is invalid: invalid_access_token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6d6249a2-68fa-4054-abf4-1544359cb2b1",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"The provided access_token is invalid\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"The provided access_token is invalid\");",
+											"    pm.expect(pm.response.text()).to.include(\"invalid_access_token\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/users/id/checkins?id={{id}}&access_token={{tyler_access_token}}*%26(*%26",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"id",
+										"checkins"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{id}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{tyler_access_token}}*&(*&"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get user purchases",
+					"item": [
+						{
+							"name": "Get user purchases",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e60332e1-b61e-43a3-905a-3db650e33e44",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.bellycard.com/api/users/{{id}}/purchases?access_token={{tyler_access_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"bellycard",
+										"com"
+									],
+									"path": [
+										"api",
+										"users",
+										"{{id}}",
+										"purchases"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{tyler_access_token}}"
+										}
+									]
+								},
+								"description": "Seems authentication is not needed.."
+							},
+							"response": []
+						},
+						{
+							"name": "Method requires an access_token for a user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3ae55c99-0412-4c45-951c-12cd5c7cd31b",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"This method requires an access_token for a user: missing_access_token_param\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"This method requires an access_token for a user\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_access_token_param\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.bellycard.com/api/users/{{id}}/purchases?access_token=",
+									"protocol": "https",
+									"host": [
+										"api",
+										"bellycard",
+										"com"
+									],
+									"path": [
+										"api",
+										"users",
+										"{{id}}",
+										"purchases"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": ""
+										}
+									]
+								},
+								"description": "Seems authentication is not needed.."
+							},
+							"response": []
+						},
+						{
+							"name": "Provided access_token is invalid: invalid_access_token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "301bda18-0282-4154-b59d-77e83ec47178",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"The provided access_token is invalid\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"The provided access_token is invalid\");",
+											"    pm.expect(pm.response.text()).to.include(\"invalid_access_token\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.bellycard.com/api/users/{{id}}/purchases?access_token={{tyler_access_token}}*(%26(*%26",
+									"protocol": "https",
+									"host": [
+										"api",
+										"bellycard",
+										"com"
+									],
+									"path": [
+										"api",
+										"users",
+										"{{id}}",
+										"purchases"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{tyler_access_token}}*(&(*&"
+										}
+									]
+								},
+								"description": "Seems authentication is not needed.."
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Businesses",
+			"item": [
+				{
+					"name": "Return a Business",
+					"item": [
+						{
+							"name": "Return a business",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7a77b5a2-cc1f-4f37-aa1e-30afed1b3eeb",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:business_id?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":business_id"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "business_id",
+											"value": "{{business_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method requires a permission that token does not have: invalid_access_token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "057511ea-9a1e-4a9b-996f-c8faa2e1ae0a",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:business_id?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":business_id"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "business_id",
+											"value": "{{business_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Could not find model with this ID: missing_model",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dde5a2f5-d918-423f-a0d1-5f4a6a7f6355",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Could not find a model with this ID: missing_model\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Could not find a model with this ID\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_model\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:business_id?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":business_id"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "business_id",
+											"value": "8675309"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get Business Info for User Check-Ins",
+					"item": [
+						{
+							"name": "Get business info for user check-ins",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "90196da8-3278-4779-8e16-17e5aa8db831",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/users/{{id}}/businesses?access_token={{tyler_access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"{{id}}",
+										"businesses"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{tyler_access_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method requires access_token for a user: missing_Access_token_param",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f38cda00-191e-4d5f-a630-f019d747370e",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"This method requires an access_token for a user: missing_access_token_param\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"This method requires an access_token for a user\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_access_token_param\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/users/{{id}}/businesses?access_token=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"{{id}}",
+										"businesses"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Provided access token is invalid: invalid_Access_token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4803336d-0a2c-4c29-83ae-8fa85c907785",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"The provided access_token is invalid\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"The provided access_token is invalid\");",
+											"    pm.expect(pm.response.text()).to.include(\"invalid_access_token\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/users/{{id}}/businesses?access_token=8675309",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"{{id}}",
+										"businesses"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "8675309"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get Business' Rewards",
+					"item": [
+						{
+							"name": "Get business’s rewards",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "53b94a65-4985-4431-b0ff-38e24de5f8ea",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/rewards?page=1&business_ids[]={{business_id}}&per_page=10\n",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"rewards"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "business_ids[]",
+											"value": "{{business_id}}"
+										},
+										{
+											"key": "per_page",
+											"value": "10\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Missing business ID(s)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "18dd3b69-3a38-4702-a6a6-534e31973b80",
+										"exec": [
+											"var jsonData = pm.response.json(); ",
+											"pm.test(\"Verify Empty JSON values\", function () { ",
+											"    pm.expect(jsonData.pagination.page).is.to.equal(1); ",
+											"    pm.expect(jsonData.pagination.per_page).is.to.equal(25); ",
+											"    pm.expect(jsonData.pagination.total_pages).is.to.equal(0); ",
+											"    pm.expect(jsonData.pagination.total_count).is.to.equal(0); ",
+											"    pm.expect(jsonData.pagination.result_count).is.to.equal(0); ",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/rewards?business_ids[]=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"rewards"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "business_ids[]",
+											"value": ""
+										},
+										{
+											"key": "per_page",
+											"value": "10\n",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Incorrect Business ID(s)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1080a949-2862-49dc-a2c0-9be20e3d1150",
+										"exec": [
+											"var jsonData = pm.response.json(); ",
+											"pm.test(\"Verify Empty JSON values\", function () { ",
+											"    pm.expect(jsonData.pagination.page).is.to.equal(1); ",
+											"    pm.expect(jsonData.pagination.per_page).is.to.equal(25); ",
+											"    pm.expect(jsonData.pagination.total_pages).is.to.equal(0); ",
+											"    pm.expect(jsonData.pagination.total_count).is.to.equal(0); ",
+											"    pm.expect(jsonData.pagination.result_count).is.to.equal(0); ",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/rewards?business_ids[]=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"rewards"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "business_ids[]",
+											"value": ""
+										},
+										{
+											"key": "per_page",
+											"value": "10\n",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get Business Categories",
+					"item": [
+						{
+							"name": "Get business categories",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "70ca28ec-51ab-4937-847d-aaab850fdaee",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/categories",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get Business Account Manager",
+					"item": [
+						{
+							"name": "Get business account manager",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0f7c8240-0721-437d-902b-f161466ca59b",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:id/account_manager?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":id",
+										"account_manager"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{business_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Empty business ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "355ec9a7-3da2-4861-82c0-9c5053bbc847",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Could not find a model with this ID: missing_model\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Could not find a model with this ID\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_model\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:id/account_manager?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":id",
+										"account_manager"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Incorrect business ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a7e16f43-b9b6-464a-a96c-3cde8cba6ab6",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Could not find a model with this ID: missing_model\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Could not find a model with this ID\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_model\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:id/account_manager?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":id",
+										"account_manager"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "*(*&(&"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get Business Stats",
+					"item": [
+						{
+							"name": "Get business statistics",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "78fb09df-adb3-40ce-8680-22ac54061da1",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:id/stats?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":id",
+										"stats"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{business_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Missing business ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a590824e-9e91-47ec-8d36-8ea28ea1b432",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Could not find a model with this ID: missing_model\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Could not find a model with this ID\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_model\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:id/stats?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":id",
+										"stats"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Incorrect business ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2bb6b416-3a27-44e4-bbbb-c47992989047",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Could not find a model with this ID: missing_model\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"Could not find a model with this ID\");",
+											"    pm.expect(pm.response.text()).to.include(\"missing_model\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:id/stats?access_token={{access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":id",
+										"stats"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "U**(&(*&"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Check-In to Business",
+					"item": [
+						{
+							"name": "Check-in to business",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "33a5114b-bd6d-4699-a22f-fb0cf76dbb0d",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:business_id/checkins?access_token={{tyler_access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":business_id",
+										"checkins"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{tyler_access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "business_id",
+											"value": "{{business_id}}"
+										}
+									]
+								},
+								"description": "Check-in to business on behalf of user\n"
+							},
+							"response": []
+						},
+						{
+							"name": "(404)The page you were looking for doesn't exist.",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "919c54e7-359b-476f-a28e-974825c2484d",
+										"exec": [
+											"pm.test(\"The page you were looking for doesn't exist.\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"The page you were looking for doesn't exist.\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/businesses/:business_id/checkins?access_token={{tyler_access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"businesses",
+										":business_id",
+										"checkins"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{tyler_access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "business_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "Check-in to business on behalf of user\n"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Rewards",
+			"item": [
+				{
+					"name": "Redeem reward",
+					"item": [
+						{
+							"name": "Redeem reward",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7f3fe121-8d12-4b21-9942-9f877a9feca0",
+										"exec": [
+											"pm.test(\"Status code is 200 Check\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"No errors found\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_access_token_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_access_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"login_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"access_denied\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_reset_token\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_reset_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insufficient_points\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_deleted\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"claim_limit_reached\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_redeemed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_expired\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"stored_reward_not_active\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_approved\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"reward_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"account_deactivated\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"failed_creating_user\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"email_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"password_already_set\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"not_eligible_for_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_joined_campaign\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"already_here\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_param\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"missing_model\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_already_exists\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"feature_not_available\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"setting_invalid_card_id\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"time_in_future\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"card_already_verified\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"geolocation_failed\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_geo_range\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"bad_image_size\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_settings\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"nonce_not_unique\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_card_hash\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"transaction_declined\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"credit_card_required\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_format\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"campaign_cannot_be_purchased\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_verify\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"insuffienct_data\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"internal_error\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"business_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"invalid_google_auth_code\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"user_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"cannot_delete_reard\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"record_not_found\");",
+											"    pm.expect(pm.response.text()).to.not.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/rewards/:reward_id/purchases?access_token={{tyler_access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"rewards",
+										":reward_id",
+										"purchases"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{tyler_access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "reward_id",
+											"value": "155934"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(1) Page you were looking for does not exist (404)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f563ba8d-7497-4f82-9a6d-dd3983a5cdd3",
+										"exec": [
+											"pm.test(\"The page you were looking for doesn't exist (404)\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/rewards/:reward_id/purchases?access_token={{tyler_access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"rewards",
+										":reward_id",
+										"purchases"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{tyler_access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "reward_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "(2) Page you were looking for does not exist (404) Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "aaf94e10-83a8-429c-8c13-0047479846fe",
+										"exec": [
+											"pm.test(\"The page you were looking for doesn't exist (404)\", function () ",
+											"{",
+											"    pm.expect(pm.response.text()).to.include(\"The page you were looking for doesn't exist (404)\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/rewards/:reward_id/purchases?access_token={{tyler_access_token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"rewards",
+										":reward_id",
+										"purchases"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{tyler_access_token}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "reward_id",
+											"value": "8675309"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Reward already redeemed",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a67104d2-afb8-4889-85d4-3ceb85389352",
+								"exec": [
+									"pm.test(\"This has already been redeemed: stored_reward_redeemed\", function () ",
+									"{",
+									"    pm.expect(pm.response.text()).to.include(\"stored_reward_redeemed\");",
+									"    pm.expect(pm.response.text()).to.include(\"This has already been redeemed\");",
+									"",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/rewards/:reward_id/redemptions?access_token={{tyler_access_token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"rewards",
+								":reward_id",
+								"redemptions"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{tyler_access_token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "reward_id",
+									"value": "158068"
+								}
+							]
+						},
+						"description": "Reward must be added as a stored reward prior & not already have redeemed"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "cc6ef38e-1bdf-48e0-b2a0-013a78a8d5ad",
+			"key": "access_token",
+			"value": "c32549-311969834a10b1b24722098083dcc549cd46272a4052119cd53bb313f9c4873b"
+		},
+		{
+			"id": "9c9d725e-5332-437e-9336-f59efdf12902",
+			"key": "tyler_qr",
+			"value": "435289593|ac003|t=k"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
